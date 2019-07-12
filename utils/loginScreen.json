@@ -1,0 +1,33 @@
+{
+  "Components": [
+    {
+      "ID": "user",
+      "LazyID": "",
+      "Styles": {}
+    },
+    {
+      "ID": "root",
+      "Styles": {}
+    }
+  ],
+  "Wrappers": [
+
+  ],
+  "ContentRoutes":[
+    {
+      "ID": "Login",
+      "Path": "/login",
+      "Components": ["user","password"]
+    }
+  ],
+  "LinkList":[
+    {
+      "ID": "Login",
+      "Path": "/login",
+      "Icon": "event_available",
+      "ExtProperties": {
+        "isMain": false
+      }
+    }
+  ]
+}
