@@ -1,8 +1,8 @@
 package main
 
 import (
-	"duckstack.com/DSLoginServer/app"
-	"duckstack.com/DSLoginServer/controllers"
+	"DSLoginServer/app"
+	"DSLoginServer/controllers"
 	"fmt"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"

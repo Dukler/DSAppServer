@@ -1,7 +1,7 @@
 package models
 
 import (
-	u "duckstack.com/DSLoginServer/utils"
+	u "DSLoginServer/utils"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"

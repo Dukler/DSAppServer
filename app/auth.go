@@ -2,8 +2,8 @@ package app
 
 import (
 	"context"
-	"duckstack.com/DSLoginServer/models"
-	u "duckstack.com/DSLoginServer/utils"
+	"DSLoginServer/models"
+	u "DSLoginServer/utils"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"net/http"

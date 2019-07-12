@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"duckstack.com/DSLoginServer/models"
-	u "duckstack.com/DSLoginServer/utils"
+	"DSLoginServer/models"
+	u "DSLoginServer/utils"
 	"encoding/json"
 	"log"
 	"net/http"

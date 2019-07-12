@@ -1,7 +1,7 @@
 package app
 
 import (
-	u "duckstack.com/DSLoginServer/utils"
+	u "DSLoginServer/utils"
 	"net/http"
 )
 
