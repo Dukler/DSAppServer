@@ -2,7 +2,6 @@ package app
 
 import (
 	"context"
-	"DSLoginServer/models"
 	u "DSLoginServer/utils"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
@@ -11,12 +10,17 @@ import (
 	"strings"
 )
 
+type Token struct {
+	UserId uint
+	jwt.StandardClaims
+}
+
 var JwtAuthentication = func(next http.Handler) http.Handler {
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		notAuth := []string{"/api/user/new",
-			"/api/user/login",
+		notAuth := []string{"/api/users/new",
+			"/api/users/login",
 			"/api/ui/update/",
 		} //List of endpoints that doesn't require auth
 		requestPath := r.URL.Path //current request path
@@ -50,7 +54,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 		}
 
 		tokenPart := splitted[1] //Grab the token part, what we are truly interested in
- 		tk := &models.Token{}
+ 		tk := &Token{}
 
 		token, err := jwt.ParseWithClaims(tokenPart, tk, func(token *jwt.Token) (interface{}, error) {
 			return []byte(os.Getenv("token_password")), nil
@@ -72,9 +76,9 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 			return
 		}
 
-		//Everything went well, proceed with the request and set the caller to the user retrieved from the parsed token
+		//Everything went well, proceed with the request and set the caller to the users retrieved from the parsed token
 		fmt.Sprintf("User %", tk.UserId) //Useful for monitoring
-		ctx := context.WithValue(r.Context(), "user", tk.UserId)
+		ctx := context.WithValue(r.Context(), "users", tk.UserId)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r) //proceed in the middleware chain!
 	});

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"DSLoginServer/app"
 	"DSLoginServer/controllers"
+	"DSLoginServer/dbh"
 	"fmt"
-	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
+	"github.com/go-chi/chi"
+	"github.com/go-chi/cors"
 	"log"
 	"net/http"
 	"os"
@@ -13,22 +13,44 @@ import (
 )
 
 func main() {
-	var router *mux.Router
-	router = mux.NewRouter()
-	router.Use(app.JwtAuthentication)
+	//var router *mux.Router
+	router := *chi.NewRouter()
+	//router.Get("/", func(w http.ResponseWriter, r *http.Request) {
+	//	w.Write([]byte("welcome"))
+	//})
+	dbh.InitDB()
 
-	router.HandleFunc("/api/user/new", controllers.CreateUser).Methods("POST")
-	router.HandleFunc("/api/user/login", controllers.Authenticate).Methods("POST")
-	http.Handle("/", router)
-
-	handler := handlers.CORS(
-		handlers.AllowedOrigins([]string{"*"}),
-		handlers.AllowedMethods([]string{"GET", "POST","OPTIONS"}),
-		handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With",  "Access-Control-Allow-Headers", "Authorization"}),
-	)(router)
+	//router = mux.NewRouter()
+	//router.Use(app.JwtAuthentication)
 
 
-	log.Fatal(http.ListenAndServe(":8082", handler))
+	c := cors.New(cors.Options{
+		// AllowedOrigins: []string{"https://foo.com"}, // Use this to allow specific origin hosts
+		AllowedOrigins:   []string{"*"},
+		// AllowOriginFunc:  func(r *http.Request, origin string) bool { return true },
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token", "X-Requested-With",  "Access-Control-Allow-Headers"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: true,
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
+	})
+	router.Use(c.Handler)
+
+	router.Post("/api/users/new", controllers.CreateUser)
+	router.Post("/api/users/login", controllers.Authenticate)
+	router.Post("/api/host/app", controllers.DomainApp)
+
+	//router.HandleFunc("/api/users/new", controllers.CreateUser).Methods("POST")
+	//router.HandleFunc("/api/users/login", controllers.Authenticate).Methods("POST")
+	//http.Handle("/", router)
+	//
+	//handler := handlers.CORS(
+	//	handlers.AllowedOrigins([]string{"*"}),
+	//	handlers.AllowedMethods([]string{"GET", "POST","OPTIONS"}),
+	//	handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With",  "Access-Control-Allow-Headers", "Authorization"}),
+	//)(router)
+
+	log.Fatal(http.ListenAndServe(":8082", &router))
 }
 
 
