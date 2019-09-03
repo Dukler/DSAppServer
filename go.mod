@@ -1,4 +1,4 @@
-module DSLoginServer
+module DSAppServer
 
 go 1.12
 

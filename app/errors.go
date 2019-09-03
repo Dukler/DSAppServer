@@ -1,7 +1,7 @@
 package app
 
 import (
-	u "DSLoginServer/utils"
+	u "DSAppServer/utils"
 	"net/http"
 )
 

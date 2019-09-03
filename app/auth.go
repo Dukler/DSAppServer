@@ -2,7 +2,7 @@ package app
 
 import (
 	"context"
-	u "DSLoginServer/utils"
+	u "DSAppServer/utils"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"net/http"

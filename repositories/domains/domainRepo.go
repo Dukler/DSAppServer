@@ -1,8 +1,8 @@
 package domains
 
 import (
-	"DSLoginServer/api"
-	"DSLoginServer/dbh"
+	"DSAppServer/api"
+	"DSAppServer/dbh"
 	"github.com/jmoiron/sqlx"
 )
 

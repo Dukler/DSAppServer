@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef01052-7f9c-44db-9fde-a4652a9d2524" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/6_create_users_domains_table.down.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/6_create_users_domains_table.up.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbh/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/dbh/dbh.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/Dockerfileold" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/authControllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authControllers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/domainController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/domainController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/2_create_users_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/2_create_users_table.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/3_create_app_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/3_create_app_table.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/3_create_app_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/3_create_app_table.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/4_create_user_app_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/4_create_user_app_table.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/5_create_domains_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/5_create_domains_table.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/5_create_domains_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/5_create_domains_table.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/6_create_app_types_table.down.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/6_create_app_types_table.up.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/99_add_dev_test.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/99_add_dev_test.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/connection.env" beforeDir="false" afterPath="$PROJECT_DIR$/utils/connection.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/domains/domainRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/domains/domainRepo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/users/userRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/users/userRepo.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,22 +52,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
+        <entry file="file://$PROJECT_DIR$/go.mod">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-580">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            <state relative-caret-position="200">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go.sum">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <element signature="e#14#165#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="160">
+              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -100,8 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>query</find>
-      <find>bcrypt</find>
       <find>8082</find>
       <find>create ex</find>
       <find>select</find>
@@ -130,6 +138,8 @@
       <find>sprint</find>
       <find>Sprintf</find>
       <find>dial</find>
+      <find>DSLoginServer</find>
+      <find>dsl</find>
     </findStrings>
     <replaceStrings>
       <replace>Email</replace>
@@ -147,10 +157,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/errors.go" />
         <option value="$PROJECT_DIR$/models/base.go" />
         <option value="$PROJECT_DIR$/db/base.go" />
-        <option value="$PROJECT_DIR$/app/auth.go" />
         <option value="$PROJECT_DIR$/models/users.go" />
         <option value="$PROJECT_DIR$/migrations/1_create_app_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/1_create_user_app_table.down.sql" />
@@ -173,17 +181,12 @@
         <option value="$PROJECT_DIR$/repositories/domain/domainRepo.go" />
         <option value="$PROJECT_DIR$/api/users.go" />
         <option value="$PROJECT_DIR$/api/domain.go" />
-        <option value="$PROJECT_DIR$/controllers/authControllers.go" />
         <option value="$PROJECT_DIR$/dbh/base.go" />
-        <option value="$PROJECT_DIR$/repositories/users/userRepo.go" />
         <option value="$PROJECT_DIR$/migrations/99_add_dev_test.down.sql" />
         <option value="$PROJECT_DIR$/migrations/5_create_domain_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/5_create_domain_table.up.sql" />
         <option value="$PROJECT_DIR$/migrations/6_create_app_types_table.up.sql" />
-        <option value="$PROJECT_DIR$/controllers/domainController.go" />
-        <option value="$PROJECT_DIR$/repositories/domains/domainRepo.go" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/74e2e646-7266-49f6-ab8e-0b02ab84d210/console.sql" />
-        <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/migrations/3_create_app_table.up.sql" />
         <option value="$PROJECT_DIR$/migrations/5_create_domains_table.up.sql" />
         <option value="$PROJECT_DIR$/migrations/99_add_dev_test.up.sql" />
@@ -193,15 +196,22 @@
         <option value="$PROJECT_DIR$/migrations/4_create_user_app_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/5_create_domains_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/6_create_users_domains_table.down.sql" />
-        <option value="$PROJECT_DIR$/utils/connection.env" />
         <option value="$PROJECT_DIR$/dbh/dbh.go" />
+        <option value="$PROJECT_DIR$/utils/connection.env" />
+        <option value="$PROJECT_DIR$/go.mod" />
+        <option value="$PROJECT_DIR$/app/errors.go" />
+        <option value="$PROJECT_DIR$/app/auth.go" />
+        <option value="$PROJECT_DIR$/controllers/authControllers.go" />
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/repositories/domains/domainRepo.go" />
+        <option value="$PROJECT_DIR$/controllers/domainController.go" />
+        <option value="$PROJECT_DIR$/repositories/users/userRepo.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="540" />
-    <option name="y" value="41" />
+    <option name="x" value="183" />
+    <option name="y" value="24" />
     <option name="width" value="1273" />
     <option name="height" value="923" />
   </component>
@@ -240,6 +250,11 @@
               <item name="DSAppServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="DSAppServer" type="462c0819:PsiDirectoryNode" />
               <item name="dbh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DSAppServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DSAppServer" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DSAppServer" type="b2602c69:ProjectViewProjectNode" />
@@ -352,16 +367,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="540" y="41" width="1273" height="923" extended-state="0" />
+    <frame x="183" y="24" width="1273" height="923" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3206925" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18878813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879817" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3281493" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27088606" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.26962024" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
@@ -412,16 +427,6 @@
     <proxy>direct</proxy>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/dbh/dbh.go</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GoApplicationRunConfiguration">
         <watch expression="connectDB(psqlInfo)" language="go" />
@@ -589,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go.sum">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/domainController.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -607,13 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -744,6 +735,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/connection.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -751,20 +749,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
+    <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-580">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="200">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/go.sum">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#14#165#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="244">
+          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"DSLoginServer/api"
-	"DSLoginServer/repositories/domains"
-	"DSLoginServer/utils"
+	"DSAppServer/api"
+	"DSAppServer/repositories/domains"
+	"DSAppServer/utils"
 	"encoding/json"
 	"github.com/dgrijalva/jwt-go"
 	"io"

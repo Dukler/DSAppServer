@@ -1,8 +1,8 @@
 package main
 
 import (
-	"DSLoginServer/controllers"
-	"DSLoginServer/dbh"
+	"DSAppServer/controllers"
+	"DSAppServer/dbh"
 	"fmt"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"

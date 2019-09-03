@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"DSLoginServer/api"
-	"DSLoginServer/repositories/users"
-	"DSLoginServer/utils"
+	"DSAppServer/api"
+	"DSAppServer/repositories/users"
+	"DSAppServer/utils"
 	"database/sql"
 	"encoding/json"
 	"golang.org/x/crypto/bcrypt"

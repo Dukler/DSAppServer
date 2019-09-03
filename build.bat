@@ -13,5 +13,5 @@ xcopy "%input%main" %output% /K /D /H /Y
 ECHO copying utils
 xcopy "%input%utils\connection.env" "%output%utils" /K /D /H /Y
 ECHO copying migrations
-xcopy "%input%migrations" "%output%" /K /D /H /Y
+xcopy "%input%migrations" "%output%migrations" /K /D /H /Y
 ECHO done.
