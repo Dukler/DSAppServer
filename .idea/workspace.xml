@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef01052-7f9c-44db-9fde-a4652a9d2524" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker/Dockerfileold" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/errors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/authControllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authControllers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/domainController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/domainController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/domains/domainRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/domains/domainRepo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/users/userRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/users/userRepo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbh/dbh.go" beforeDir="false" afterPath="$PROJECT_DIR$/dbh/dbh.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,38 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/connection.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go.mod">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go.sum">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="415">
+              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -81,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="-800">
               <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
             </state>
           </provider>
@@ -196,7 +158,6 @@
         <option value="$PROJECT_DIR$/migrations/4_create_user_app_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/5_create_domains_table.down.sql" />
         <option value="$PROJECT_DIR$/migrations/6_create_users_domains_table.down.sql" />
-        <option value="$PROJECT_DIR$/dbh/dbh.go" />
         <option value="$PROJECT_DIR$/utils/connection.env" />
         <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/app/errors.go" />
@@ -206,6 +167,7 @@
         <option value="$PROJECT_DIR$/repositories/domains/domainRepo.go" />
         <option value="$PROJECT_DIR$/controllers/domainController.go" />
         <option value="$PROJECT_DIR$/repositories/users/userRepo.go" />
+        <option value="$PROJECT_DIR$/dbh/dbh.go" />
       </list>
     </option>
   </component>
@@ -334,6 +296,7 @@
       <go_parameters value="-i" />
       <envs>
         <env name="PORT" value="8082" />
+        <env name="ENVIROMENT" value="LOCAL" />
       </envs>
       <kind value="FILE" />
       <filePath value="C:\Users\iarwa\Workspace\Go\DSAppServer\main.go" />
@@ -735,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/connection.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -763,10 +719,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-800">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dbh/dbh.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="415">
+          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
         </state>
       </provider>
     </entry>

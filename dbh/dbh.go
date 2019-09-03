@@ -50,27 +50,33 @@ func connectDB(psqlInfo string) bool{
 func InitDB() {
 	path,_ := filepath.Abs("./utils/connection.env")
 	//migrationsPath,_ := filepath.Abs("./migrations")
-	e := godotenv.Load(path) //Load .env file
-	if e != nil {
-		fmt.Print(e)
+	var connectionString string
+	if os.Getenv("ENVIROMENT")=="LOCAL"{
+		e := godotenv.Load(path) //Load .env file
+		if e != nil {
+			fmt.Print(e)
+		}
+		username := os.Getenv("db_user")
+		password := os.Getenv("db_pass")
+		dbName := os.Getenv("db_name")
+		dbHost := os.Getenv("db_host")
+		port := 5432
+
+		connectionString = fmt.Sprintf("host=%s port=%d user=%s "+
+			"password=%s dbname=%s sslmode=disable",
+			dbHost, port, username, password, dbName)
+	}else{
+		connectionString = os.Getenv("DATABASE_URL")
 	}
-	username := os.Getenv("db_user")
-	password := os.Getenv("db_pass")
-	dbName := os.Getenv("db_name")
-	dbHost := os.Getenv("db_host")
-	port := 5432
-
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		dbHost, port, username, password, dbName)
 
 
-	test := connectDB(psqlInfo)
+
+	test := connectDB(connectionString)
 	reconnections := 5
 	for i:=0; i < reconnections && !test; i++ {
 		timer1 := time.NewTimer(5 * time.Second)
 		<-timer1.C
-		connectDB(psqlInfo)
+		connectDB(connectionString)
 	}
 	var err error
 	err = db.Ping()
@@ -96,8 +102,8 @@ func InitDB() {
 		panic(err)
 	}
 
-	dbUri := fmt.Sprintf("host=%s user=%s dbname=%s sslmode=disable password=%s", dbHost, username, dbName, password) //Build connection string
-	fmt.Println(dbUri)
+
+	fmt.Println(connectionString)
 }
 
 
