@@ -1,0 +1,5 @@
+FROM scratch
+ADD main ./
+ENV PORT 8082
+EXPOSE 8082
+ENTRYPOINT [“/main”]

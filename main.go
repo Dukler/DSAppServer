@@ -50,7 +50,7 @@ func main() {
 	//	handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With",  "Access-Control-Allow-Headers", "Authorization"}),
 	//)(router)
 
-	log.Fatal(http.ListenAndServe(":8082", &router))
+	log.Fatal(http.ListenAndServe(":"+ os.Getenv("PORT"), &router))
 }
 
 
