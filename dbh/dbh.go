@@ -51,7 +51,7 @@ func InitDB() {
 	path,_ := filepath.Abs("./utils/connection.env")
 	//migrationsPath,_ := filepath.Abs("./migrations")
 	var connectionString string
-	if os.Getenv("ENVIROMENT")=="LOCAL"{
+	if os.Getenv("ENV")=="DEBUG"{
 		e := godotenv.Load(path) //Load .env file
 		if e != nil {
 			fmt.Print(e)
@@ -80,26 +80,33 @@ func InitDB() {
 	}
 	var err error
 	err = db.Ping()
-	s := fmt.Sprintf("DB connection failed after %s tries", reconnections)
 	if err != nil{
+		s := fmt.Sprintf("DB connection failed after %s tries", reconnections)
 		dbErr := errors.New(s)
 		panic(dbErr)
 	}
 
-	//defer db.Close()
+	//defer db.Close() no
 
+	pgConfig := postgres.Config{}
+	driver, err := postgres.WithInstance(db.DB, &pgConfig)
+	if err != nil {
+		log.Fatalf("could not start sql migration... %v", err)
+	}
 
-	driver, _ := postgres.WithInstance(db.DB, &postgres.Config{})
 	m, err := migrate.NewWithDatabaseInstance(
 		"file://migrations",
-		"login", driver)
+		pgConfig.DatabaseName, driver)
 
 	if err != nil {
 		log.Fatalf("migration failed... %v", err)
 	}
-	err = m.Steps(7)
-	if err != nil {
-		panic(err)
+	//err = m.Down()
+	//if err := m.Down(); err != nil && err != migrate.ErrNoChange {
+	//	log.Fatalf("An error occurred while syncing the database.. %v", err)
+	//}
+	if err := m.Up(); err != nil && err != migrate.ErrNoChange {
+		log.Fatalf("An error occurred while syncing the database.. %v", err)
 	}
 
 

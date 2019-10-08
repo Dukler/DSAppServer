@@ -40,18 +40,9 @@ func main() {
 	router.Post("/api/users/new", controllers.CreateUser)
 	router.Post("/api/users/login", controllers.Authenticate)
 	router.Post("/api/host/app", controllers.DomainApp)
+	port := os.Getenv("PORT")
 
-	//router.HandleFunc("/api/users/new", controllers.CreateUser).Methods("POST")
-	//router.HandleFunc("/api/users/login", controllers.Authenticate).Methods("POST")
-	//http.Handle("/", router)
-	//
-	//handler := handlers.CORS(
-	//	handlers.AllowedOrigins([]string{"*"}),
-	//	handlers.AllowedMethods([]string{"GET", "POST","OPTIONS"}),
-	//	handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With",  "Access-Control-Allow-Headers", "Authorization"}),
-	//)(router)
-
-	log.Fatal(http.ListenAndServe(":"+ os.Getenv("PORT"), &router))
+	log.Fatal(http.ListenAndServe(":"+ port, &router))
 }
 
 
