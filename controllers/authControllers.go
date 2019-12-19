@@ -10,18 +10,16 @@ import (
 	"net/http"
 )
 
-
 var CreateUser = func(w http.ResponseWriter, r *http.Request) {
-	usr, err := api.NewUser(w,r)
+	usr, err := api.NewUser(w, r)
 	usrRepo, _ := users.NewUserRepo()
-	_,err = usrRepo.Create(usr)
+	_, err = usrRepo.Create(usr)
 
 	if err != nil {
 		// If there is something wrong with the request body, return a 400 status
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-
 
 }
 
@@ -66,5 +64,5 @@ var Authenticate = func(w http.ResponseWriter, r *http.Request) {
 	resp["email"] = storedCreds.Email
 	resp["token"] = storedCreds.Token.String
 	w.WriteHeader(http.StatusOK)
-	utils.Respond(w,resp)
+	utils.Respond(w, resp)
 }

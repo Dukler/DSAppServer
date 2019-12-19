@@ -29,14 +29,15 @@ type Test struct {
 	//ID string `db:"id"`
 	//Email  string `db:"email"`
 
-	ID uint `sql:"id"`
-	Email string `sql:"email"`
+	ID       uint   `sql:"id"`
+	Email    string `sql:"email"`
 	Username string `sql:"username"`
 	Password string `sql:"password"`
 	//Token string `json:"token";sql:"-"`
 	Token string `sql:"token"`
 }
-func connectDB(psqlInfo string) bool{
+
+func connectDB(psqlInfo string) bool {
 	var err error
 	db, err = sqlx.Connect("postgres", psqlInfo)
 	if err != nil {
@@ -48,10 +49,11 @@ func connectDB(psqlInfo string) bool{
 }
 
 func InitDB() {
-	path,_ := filepath.Abs("./utils/connection.env")
+	path, _ := filepath.Abs("./utils/connection.env")
 	//migrationsPath,_ := filepath.Abs("./migrations")
 	var connectionString string
-	if os.Getenv("ENV")=="DEBUG"{
+	env := os.Getenv("ENV")
+	if env == "DEBUG" {
 		e := godotenv.Load(path) //Load .env file
 		if e != nil {
 			fmt.Print(e)
@@ -65,22 +67,20 @@ func InitDB() {
 		connectionString = fmt.Sprintf("host=%s port=%d user=%s "+
 			"password=%s dbname=%s sslmode=disable",
 			dbHost, port, username, password, dbName)
-	}else{
+	} else {
 		connectionString = os.Getenv("DATABASE_URL")
 	}
 
-
-
 	test := connectDB(connectionString)
 	reconnections := 5
-	for i:=0; i < reconnections && !test; i++ {
+	for i := 0; i < reconnections && !test; i++ {
 		timer1 := time.NewTimer(5 * time.Second)
 		<-timer1.C
 		connectDB(connectionString)
 	}
 	var err error
 	err = db.Ping()
-	if err != nil{
+	if err != nil {
 		s := fmt.Sprintf("DB connection failed after %s tries", reconnections)
 		dbErr := errors.New(s)
 		panic(dbErr)
@@ -109,10 +109,8 @@ func InitDB() {
 		log.Fatalf("An error occurred while syncing the database.. %v", err)
 	}
 
-
 	fmt.Println(connectionString)
 }
-
 
 //returns a handle to the DB object
 func GetDB() *sqlx.DB {
