@@ -3,16 +3,17 @@ package dbh
 import (
 	"errors"
 	"fmt"
+	"log"
+	"os"
+	"path/filepath"
+	"time"
+
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 	"github.com/jmoiron/sqlx"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
-	"log"
-	"os"
-	"path/filepath"
-	"time"
 )
 
 var db *sqlx.DB
@@ -53,7 +54,9 @@ func InitDB() {
 	//migrationsPath,_ := filepath.Abs("./migrations")
 	var connectionString string
 	env := os.Getenv("ENV")
-	if env == "DEBUG" {
+	if env == "HEROKU" {
+		connectionString = os.Getenv("DATABASE_URL")
+	} else {
 		e := godotenv.Load(path) //Load .env file
 		if e != nil {
 			fmt.Print(e)
@@ -67,8 +70,6 @@ func InitDB() {
 		connectionString = fmt.Sprintf("host=%s port=%d user=%s "+
 			"password=%s dbname=%s sslmode=disable",
 			dbHost, port, username, password, dbName)
-	} else {
-		connectionString = os.Getenv("DATABASE_URL")
 	}
 
 	test := connectDB(connectionString)
@@ -109,7 +110,8 @@ func InitDB() {
 		log.Fatalf("An error occurred while syncing the database.. %v", err)
 	}
 
-	fmt.Println(connectionString)
+	
+	// fmt.Println(connectionString) print connection string
 }
 
 //returns a handle to the DB object

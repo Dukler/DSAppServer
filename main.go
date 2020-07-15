@@ -42,15 +42,18 @@ func main() {
 	router.Post("/api/users/login", controllers.Authenticate)
 	router.Post("/api/host/app", controllers.DomainApp)
 	port := os.Getenv("PORT")
-
+	if (port == ""){
+		port = "8082"
+	}
+	fmt.Println("DSAppServer");
 	log.Fatal(http.ListenAndServe(":"+ port, &router))
+	
 }
 
 
 
 func redirectToHttps(w http.ResponseWriter, r *http.Request) {
 	// Redirect the incoming HTTP request. Note that "127.0.0.1:8081" will only work if you are accessing the server from your local machine.
-	print("dickballs")
 	http.Redirect(w, r, "https://192.168.0.2:8081"+r.RequestURI, http.StatusMovedPermanently)
 }
 
